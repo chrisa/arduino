@@ -3,8 +3,8 @@ OBJ            = flash.o
 MCU_TARGET     = atmega328p
 OPTIMIZE       = -O0
 
-DEFS           = -I /opt/local/avr/include/avr
-LIBS           = -B /opt/local/avr/lib
+DEFS           = 
+LIBS           = 
 
 # You should not have to change anything below here.
 
@@ -19,7 +19,7 @@ override LDFLAGS       = -Wl,-Map,$(PRG).map
 OBJCOPY        = avr-objcopy
 OBJDUMP        = avr-objdump
 
-all: $(PRG).elf lst text eeprom
+all: run
 
 $(PRG).elf: $(OBJ)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
